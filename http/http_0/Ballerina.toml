@@ -1,0 +1,8 @@
+[package]
+org = "lalama"
+name = "http_0"
+version = "0.1.0"
+distribution = "2201.12.7"
+
+[build-options]
+observabilityIncluded = true

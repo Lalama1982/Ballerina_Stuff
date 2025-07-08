@@ -12,7 +12,26 @@ table<Album> key(id) albums = table [
     {id: "3", title: "Sarah Vaughan and Clifford Brown", artist: "Sarah Vaughan"}
 ];
 
+# A service representing a network-accessible API
+# bound to port `9090`.
 service / on new http:Listener(9090) {
+
+    # resource for simple Hello-worl
+    # + return - hello message
+    resource function get hello() returns string {
+        return "Hello, World!";
+    }
+
+    # A resource for generating greetings
+    # + name - name as a string or nil
+    # + return - string name with hello message or error
+    resource function get greeting(string? name) returns string|error {
+        // Send a response back to the caller.
+        if name is () {
+            return error("name should not be empty!");
+        }
+        return string `Hello, ${name}`;
+    }
 
     resource function get albums() returns Album[] {
         return albums.toArray();
@@ -29,5 +48,5 @@ service / on new http:Listener(9090) {
     resource function post albums(Album album) returns Album {
         albums.add(album);
         return album;
-    }
+    }        
 }
