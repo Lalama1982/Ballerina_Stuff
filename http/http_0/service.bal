@@ -74,6 +74,35 @@ service /http0 on new http:Listener(9090) {
         albums.add(album);
         return album;
     }
+
+    resource function post albumsReqBody(http:Request request) returns http:Response|error {
+        json payload = check request.getJsonPayload();
+        io:println("albums-ReqBody-Add: All >> " + payload.toString());
+
+        string artist = check payload.artist;
+        io:println("albums-ReqBody-Add: artist >> " + artist);
+
+        // Casting request body to "album" type
+        //Album album = check payload.cloneWithType();
+        Album|error album = check payload.cloneWithType();
+        string addErr;
+        if album is error {
+            addErr = "Casting payload to albums >> failed";
+        } else{
+            albums.add(album); 
+            addErr = "Casting payload to albums >> success";            
+        }          
+        io:println(addErr);     
+
+        json respJson = {"From": "albumsReqBody", "request": payload, "casting_outcome": addErr};
+
+        // Create a response and populate the headers/payload.
+        http:Response response = new;
+        response.setPayload(respJson);
+        response.setHeader("x-albumsReqBody", "Set at albumsReqBody");
+        return response;                
+    }
+
     // The resource returns the `409 Conflict` status code as the error response status code using 
     // the `StatusCodeResponse` constants. This constant does not have a body or headers.
     resource function post albumsDuplChk(Album album) returns Album|AlbumConflict { //Album|http:Conflict {
