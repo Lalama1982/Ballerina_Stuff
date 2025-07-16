@@ -1,4 +1,6 @@
 import ballerina/http;
+import ballerina/mime;
+import ballerina/io;
 
 type Album readonly & record {|
     string id;
@@ -12,9 +14,17 @@ table<Album> key(id) albums = table [
     {id: "3", title: "Sarah Vaughan and Clifford Brown", artist: "Sarah Vaughan"}
 ];
 
+// Represents the subtype of http:Conflict status code record.
+type AlbumConflict record {|
+    *http:Conflict;
+    record {
+        string message;
+    } body;
+|};
+
 # A service representing a network-accessible API
 # bound to port `9090`.
-service / on new http:Listener(9090) {
+service /http0 on new http:Listener(9090) {
 
     # resource for simple Hello-worl
     # + return - hello message
@@ -37,7 +47,7 @@ service / on new http:Listener(9090) {
         return albums.toArray();
     }
 
-    resource function get albums/[string id]() returns Album|http:NotFound {
+    resource function get albumsByPath/[string id]() returns Album|http:NotFound {
         Album? album = albums[id];
         if album is () {
             return http:NOT_FOUND;
@@ -45,8 +55,34 @@ service / on new http:Listener(9090) {
         return album;
     }
 
+    resource function get albumsByQuery(string artist) returns Album[] {
+        return from Album album in albums
+            where album.artist == artist
+            select album;
+    }
+
+    // The `accept` argument with `@http:Header` annotation takes the value of the `Accept` request header.
+    resource function get albumsWithHeader(@http:Header string accept) returns Album[]|http:NotAcceptable {
+        if !string:equalsIgnoreCaseAscii(accept, mime:APPLICATION_JSON) {
+            return http:NOT_ACCEPTABLE;
+        }
+        return albums.toArray();
+    }    
+
     resource function post albums(Album album) returns Album {
+        io:println("albumsAdd: " + album.artist);
         albums.add(album);
         return album;
-    }        
+    }
+    // The resource returns the `409 Conflict` status code as the error response status code using 
+    // the `StatusCodeResponse` constants. This constant does not have a body or headers.
+    resource function post albumsDuplChk(Album album) returns Album|AlbumConflict { //Album|http:Conflict {
+        io:println("albums: " + album.artist);
+        if albums.hasKey(album.title) {
+            //return http:CONFLICT;
+            return {body: { message: "album already exists" }};
+        }
+        albums.add(album);
+        return album;
+    }    
 }
