@@ -1,6 +1,6 @@
 import ballerina/http;
-import ballerina/mime;
 import ballerina/io;
+import ballerina/mime;
 
 type Album readonly & record {|
     string id;
@@ -67,12 +67,13 @@ service /http0 on new http:Listener(9090) {
             return http:NOT_ACCEPTABLE;
         }
         return albums.toArray();
-    }    
+    }
 
-    resource function post albums(Album album) returns Album {
+    resource function post albums(Album album) returns Album|error {
         io:println("albumsAdd: " + album.artist);
         albums.add(album);
         return album;
+
     }
 
     resource function post albumsReqBody(http:Request request) returns http:Response|error {
@@ -84,23 +85,36 @@ service /http0 on new http:Listener(9090) {
 
         // Casting request body to "album" type
         //Album album = check payload.cloneWithType();
+
+        string addErr = "";
+        string albumAdd = "";
         Album|error album = check payload.cloneWithType();
-        string addErr;
+
         if album is error {
             addErr = "Casting payload to albums >> failed";
-        } else{
-            albums.add(album); 
-            addErr = "Casting payload to albums >> success";            
-        }          
-        io:println(addErr);     
+        } else {
+            addErr = "Casting payload to albums >> success";
 
-        json respJson = {"From": "albumsReqBody", "request": payload, "casting_outcome": addErr};
+            if albums.hasKey(album.title) {
+                //return http:CONFLICT;
+                albumAdd = "album already exists";
+            } else {
+                albums.add(album);
+                albumAdd = "album added to albums";
+            }
+        }
+        io:println(addErr);
+
+        json respJson = {"From": "albumsReqBody", "request": payload, "album_add": albumAdd, "casting_outcome": addErr};
 
         // Create a response and populate the headers/payload.
         http:Response response = new;
+        io:println("1");
         response.setPayload(respJson);
+        io:println("2");
         response.setHeader("x-albumsReqBody", "Set at albumsReqBody");
-        return response;                
+        io:println("3");
+        return response;
     }
 
     // The resource returns the `409 Conflict` status code as the error response status code using 
@@ -109,9 +123,9 @@ service /http0 on new http:Listener(9090) {
         io:println("albums: " + album.artist);
         if albums.hasKey(album.title) {
             //return http:CONFLICT;
-            return {body: { message: "album already exists" }};
+            return {body: {message: "album already exists"}};
         }
         albums.add(album);
         return album;
-    }    
+    }
 }
