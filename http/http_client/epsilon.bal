@@ -2,14 +2,18 @@ import ballerina/http;
 import ballerina/io;
 
 string url = "https://wwwstg.eduweb.vic.gov.au/EpsilonRTOInterface";
-http:Client endpoint = check new (url);
+string host = "wwwstg.eduweb.vic.gov.au";
+//http:Client endpoint = check new (url);
 decimal timeout = 15;
 http:HttpVersion httpVersion = http:HTTP_1_1;
 string tokenPwd = "Epsilon678*";
 string tokenUid = "ECHTES";
 string tokenToid = "0416";
 
+//public string urlDss = "https://24c9c232-84f9-4788-ae7a-597a7e4f2b87-nonprod.nonprod.hgln.choreoapis.dev/epsilonintegration/epsilonintegrationdss/v1.0/services/DS_Epsilon_Intg_DSS";
+
 public function main() returns error? {
+
     http:Client|error epsilonTokenClient = new (url, {timeout, httpVersion});
 
     if epsilonTokenClient is error {
@@ -26,10 +30,15 @@ public function main() returns error? {
 
     http:Request reqToken = new;
     reqToken.setHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-    reqToken.setHeader("Host", "wwwstg.eduweb.vic.gov.au");
+    reqToken.setHeader("Host", host);
     reqToken.setPayload(tokenBody);
 
-    json tokenResp = check epsilonTokenClient->/token.post(reqToken);
+    http:Response resToken = new;
+    //json tokenResp = check epsilonTokenClient->/token.post(reqToken);
+    resToken = check epsilonTokenClient->/token.post(reqToken);
+    io:println("statusCode >> ", resToken.statusCode);
+
+    json tokenResp = check resToken.getJsonPayload();
     io:println(`tokenResp : ${tokenResp}`);
 
     string token = check tokenResp.access_token;
