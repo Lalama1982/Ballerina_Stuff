@@ -1,0 +1,287 @@
+[
+    {
+        "Trainee": {
+            "TraineeDetails": {
+                "hsd_epsilonidentifier": "1000141611",
+                "firstname": "Cain Aldean",
+                "lastname": "Simms-Wood",
+                "hsd_gender": "Male",
+                "hsd_dateofbirth": "2005-06-02T00:00:00.00",
+                "hsd_usi": "E38GBL4FS9",
+                "hsd_hasadisability": false,
+                "hsd_citizenshipstatus": "Australian Citizen/Permanent Resident"
+            },
+            "TraineeContactDetails": {
+                "telephone2": "(+61) 4 7766 2178",
+                "mobilephone": "(+61) 477 662 178",
+                "emailaddress1": "cain05simmswood@gmail.com"
+            },
+            "TraineePreviousTCDetails": {
+                "hsd_previoustrainingcontract": null
+            },
+            "TraineeAddress": {
+                "address2_line1": "Unit 3",
+                "address2_line2": "51 Sycamore St",
+                "address2_city": "HOPPERS CROSSING",
+                "address2_postalcode": "3029",
+                "hsd_address2state": "Victoria",
+                "hsd_address2country": "Australia"
+            }
+        },
+        "Employer": {
+            "EmployerDetails": {
+                "hsd_epsilonidentifier": "147591",
+                "hsd_legalname": "ELECTRIX PTY. LTD.",
+                "hsd_name": "Omexom Australia",
+                "emailaddress1": "robert.osullivan@omexom.com",
+                "hsd_abn": "44067232393"
+            },
+            "EmployerPostalAddress": {
+                "Address2_line1": "Warehouse 1",
+                "Address2_line2": "8 Weddel Ct",
+                "Address2_city": "LAVERTON NORTH",
+                "Address2_postalcode": "3026",
+                "Address2_state": "Victoria",
+                "Address2_country": "Australia"
+            },
+            "EmployerPhysicalAddress": {
+                "address1_line1": "Warehouse 1",
+                "address1_line2": "8 Weddel Ct",
+                "address1_city": "LAVERTON NORTH",
+                "address1_postalcode": "3026",
+                "address1_state": "Victoria",
+                "address1_country": "Australia"
+            },
+            "EmployerPrimaryContact": {
+                "telephone1": "(+61) 4 3849 4606",
+                "mobilephone": "(+61) 438 494 606",
+                "firstname": "Robert",
+                "lastname": "O'Sullivan"
+            },
+            "WorkplacePhysicalAddress": {
+                "address1_line1": "1/8 Weddel Court",
+                "address1_line2": null,
+                "address1_city": "Laverton North",
+                "address1_postalcode": "3026",
+                "address1_state": "Victoria",
+                "address1_country": "Australia"
+            }
+        },
+        "TrainingContract": {
+            "TrainingContractDetails": {
+                "hsd_trainingcontractstatus": "Active",
+                "hsd_epsilonidentifier": "60224764",
+                "hsd_commencementdate": "2025-02-10T00:00:00.00",
+                "hsd_nominalcompletiondate": "2029-02-08T00:00:00.00",
+                "hsd_probationperiod": "90",
+                "hsd_determinationcode": "10000059",
+                "hsd_determinationname": "UET Transmission, Distribution and Rail Sector Training Package Release 2",
+                "hsd_statuschanged": "2025-02-10T00:00:00.00",
+                "hsd_trainingorganisationid": "0416",
+                "hsd_terminationdate": null,
+                "hsd_SchoolName": "",
+                "hsd_schemetype": "APP"
+            },
+            "Qualification": {
+                "hsd_code": "UET30621",
+                "hsd_deltacode": "UET30621",
+                "hsd_qualificationname": "Certificate III in ESI - Distribution Overhead",
+                "hsd_version": "2"
+            },
+            "ANPDetails": {
+                "hsd_epsilonidentifier": "400019",
+                "hsd_legalname": "MEGT"
+            }
+        }
+    },
+    {
+        "Trainee": {
+            "TraineeDetails": {
+                "hsd_epsilonidentifier": "1000141630",
+                "firstname": "Joseph ",
+                "lastname": "Coniglione",
+                "hsd_gender": "Male",
+                "hsd_dateofbirth": "2005-04-18T00:00:00.00",
+                "hsd_usi": "NNCBRCKF8K",
+                "hsd_hasadisability": false,
+                "hsd_citizenshipstatus": "Australian Citizen/Permanent Resident"
+            },
+            "TraineeContactDetails": {
+                "telephone2": "(+61) 4 9982 5008",
+                "mobilephone": "(+61) 499 825 008",
+                "emailaddress1": "coniglione.joey@gmail.com"
+            },
+            "TraineePreviousTCDetails": {
+                "hsd_previoustrainingcontract": null
+            },
+            "TraineeAddress": {
+                "address2_line1": "14 Janet Bowman Drive",
+                "address2_line2": null,
+                "address2_city": "BEACONSFIELD",
+                "address2_postalcode": "3807",
+                "hsd_address2state": "Victoria",
+                "hsd_address2country": "Australia"
+            }
+        },
+        "Employer": {
+            "EmployerDetails": {
+                "hsd_epsilonidentifier": "367647",
+                "hsd_legalname": "Lestech Electrical Pty Ltd",
+                "hsd_name": "Lestech Electrical Pty Ltd",
+                "emailaddress1": "admin@lestechelectrical.com.au",
+                "hsd_abn": "26146004364"
+            },
+            "EmployerPostalAddress": {
+                "Address2_line1": "6/19-25 Rimfire Drive",
+                "Address2_line2": null,
+                "Address2_city": "HALLAM",
+                "Address2_postalcode": "3803",
+                "Address2_state": "Victoria",
+                "Address2_country": "Australia"
+            },
+            "EmployerPhysicalAddress": {
+                "address1_line1": "6/19-25 Rimfire Drive",
+                "address1_line2": null,
+                "address1_city": "HALLAM",
+                "address1_postalcode": "3803",
+                "address1_state": "Victoria",
+                "address1_country": "Australia"
+            },
+            "EmployerPrimaryContact": {
+                "telephone1": "(+61) 4 1146 6424",
+                "mobilephone": "(+61) 411 466 424",
+                "firstname": "Jamie",
+                "lastname": "Leslie"
+            },
+            "WorkplacePhysicalAddress": {
+                "address1_line1": "Unit 6 19-25 Rimfire Drive",
+                "address1_line2": null,
+                "address1_city": "HALLAM",
+                "address1_postalcode": "3803",
+                "address1_state": "Victoria",
+                "address1_country": "Australia"
+            }
+        },
+        "TrainingContract": {
+            "TrainingContractDetails": {
+                "hsd_trainingcontractstatus": "Active",
+                "hsd_epsilonidentifier": "60224791",
+                "hsd_commencementdate": "2025-01-28T00:00:00.00",
+                "hsd_nominalcompletiondate": "2029-01-26T00:00:00.00",
+                "hsd_probationperiod": "90",
+                "hsd_determinationcode": "10000032",
+                "hsd_determinationname": "UEE Electrotechnology Training Package Release 2",
+                "hsd_statuschanged": "2025-01-28T00:00:00.00",
+                "hsd_trainingorganisationid": "0416",
+                "hsd_terminationdate": null,
+                "hsd_SchoolName": "",
+                "hsd_schemetype": "APP"
+            },
+            "Qualification": {
+                "hsd_code": "UEE30820",
+                "hsd_deltacode": "UEE30820",
+                "hsd_qualificationname": "Certificate III in Electrotechnology Electrician",
+                "hsd_version": "6"
+            },
+            "ANPDetails": {
+                "hsd_epsilonidentifier": "400019",
+                "hsd_legalname": "MEGT"
+            }
+        }
+    },
+    {
+        "Trainee": {
+            "TraineeDetails": {
+                "hsd_epsilonidentifier": "1000107933",
+                "firstname": "Markos Scott",
+                "lastname": "Batzias",
+                "hsd_gender": "Male",
+                "hsd_dateofbirth": "1973-05-28T00:00:00.00",
+                "hsd_usi": "HK8RPYLV8T",
+                "hsd_hasadisability": false,
+                "hsd_citizenshipstatus": "Australian Citizen/Permanent Resident"
+            },
+            "TraineeContactDetails": {
+                "telephone2": "(+61) 4 3163 5818",
+                "mobilephone": "(+61) 431 635 818",
+                "emailaddress1": "mbatzias@gmail.com"
+            },
+            "TraineePreviousTCDetails": {
+                "hsd_previoustrainingcontract": null
+            },
+            "TraineeAddress": {
+                "address2_line1": "75A Cole Street",
+                "address2_line2": null,
+                "address2_city": "BRIGHTON",
+                "address2_postalcode": "3186",
+                "hsd_address2state": "Victoria",
+                "hsd_address2country": "Australia"
+            }
+        },
+        "Employer": {
+            "EmployerDetails": {
+                "hsd_epsilonidentifier": "526056",
+                "hsd_legalname": "CARNOVALE, SERGE",
+                "hsd_name": "Cube4 Building Services",
+                "emailaddress1": "info@cube4.com.au",
+                "hsd_abn": "50628927034"
+            },
+            "EmployerPostalAddress": {
+                "Address2_line1": "10 Laburnum Street",
+                "Address2_line2": null,
+                "Address2_city": "BRIGHTON",
+                "Address2_postalcode": "3186",
+                "Address2_state": "Victoria",
+                "Address2_country": "Australia"
+            },
+            "EmployerPhysicalAddress": {
+                "address1_line1": "10 Laburnum Street",
+                "address1_line2": null,
+                "address1_city": "BRIGHTON",
+                "address1_postalcode": "3186",
+                "address1_state": "Victoria",
+                "address1_country": "Australia"
+            },
+            "EmployerPrimaryContact": {
+                "telephone1": "(+61) 4 1258 6550",
+                "mobilephone": "(+61) 412 586 550",
+                "firstname": "Serge",
+                "lastname": "Carnovale"
+            },
+            "WorkplacePhysicalAddress": {
+                "address1_line1": "3/38 Wannan Street",
+                "address1_line2": null,
+                "address1_city": "HIGHETT",
+                "address1_postalcode": "3190",
+                "address1_state": "Victoria",
+                "address1_country": "Australia"
+            }
+        },
+        "TrainingContract": {
+            "TrainingContractDetails": {
+                "hsd_trainingcontractstatus": "Active-Recommencement",
+                "hsd_epsilonidentifier": "60224795",
+                "hsd_commencementdate": "2024-11-04T00:00:00.00",
+                "hsd_nominalcompletiondate": "2027-07-06T00:00:00.00",
+                "hsd_probationperiod": "90",
+                "hsd_determinationcode": "10000051",
+                "hsd_determinationname": "CPC Construction, Plumbing and Services Training Package Release 5",
+                "hsd_statuschanged": "2024-11-04T00:00:00.00",
+                "hsd_trainingorganisationid": "0416",
+                "hsd_terminationdate": null,
+                "hsd_SchoolName": "",
+                "hsd_schemetype": "EXT"
+            },
+            "Qualification": {
+                "hsd_code": "CPC30220",
+                "hsd_deltacode": "CPC30220",
+                "hsd_qualificationname": "Certificate III in Carpentry",
+                "hsd_version": "6"
+            },
+            "ANPDetails": {
+                "hsd_epsilonidentifier": "400019",
+                "hsd_legalname": "MEGT"
+            }
+        }
+    }
+]
